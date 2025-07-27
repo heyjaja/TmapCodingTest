@@ -13,3 +13,10 @@ CREATE TABLE tb_poi (
   - POST `/api/poi/import`
 - POI 목록 조회
   - GET `/api/poi`
+
+## 실행
+1. .env 생성
+2. `TMAP_API_KEY` 추가
+3. DB 및 사용자 생성
+4. table 생성
+3. `npm start`

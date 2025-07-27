@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="poi">
+    <!-- 모든 POI 데이터 삭제 -->
+    <delete id="deleteAllPoi">
+        DELETE FROM tb_poi
+    </delete>
+
+    <!-- POI 데이터 단일 삽입 -->
+    <insert id="insertPoi">
+        INSERT INTO tb_poi (title, latitude, longitude)
+        VALUES (#{title}, #{latitude}, #{longitude})
+    </insert>
+
+    <!-- 모든 POI 데이터 조회 -->
+    <select id="selectAllPoi">
+        SELECT poi_id, title, latitude, longitude
+        FROM tb_poi
+        ORDER BY poi_id
+    </select>
+
+    <!-- POI 데이터 ID로 조회 -->
+    <select id="selectPoiById" parameterType="int" resultType="poi">
+        SELECT poi_id, title, latitude, longitude
+        FROM tb_poi
+        WHERE poi_id = #{poiId}
+    </select>
+</mapper>

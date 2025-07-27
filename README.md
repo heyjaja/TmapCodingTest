@@ -10,6 +10,6 @@ CREATE TABLE tb_poi (
 
 ## API
 - POI 엑셀 파일 업로드
-  - POST `/api/poi/upload`
+  - POST `/api/poi/import`
 - POI 목록 조회
   - GET `/api/poi`
